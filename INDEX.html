@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Urban Stitch</title>
+</head>
+<body>
+<style>
+  
+    .promo-wrapper {
+        background-color: #0B1F33; /* Bootstrap bg-danger color */
+        color: white;
+        overflow: hidden; /* Bahar ka text chhupane ke liye */
+        white-space: nowrap;
+        padding: 10px 0;
+        display: flex;
+    }
+
+
+    .promo-content {
+        display: flex;
+        gap: 100px; 
+        animation: marquee-animation 20s linear infinite;
+        min-width: 100%;
+    }
+
+    /* Text Style */
+    .promo-content p {
+        margin: 0;
+        font-weight: 500;
+        font-size: 14px;
+        flex-shrink: 0; 
+    }
+
+    @keyframes marquee-animation {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); } 
+    }
+
+    
+    .promo-wrapper:hover .promo-content {
+        animation-play-state: paused;
+    }
+</style>
+
+<div class="promo-wrapper">
+    <div class="promo-content">
+        <p>Buy 2 Get ₹250 OFF | Buy 3 Get ₹500 OFF + Extra 5% OFF on Prepaid</p>
+        <p>Buy 2 Get ₹250 OFF | Buy 3 Get ₹500 OFF + Extra 5% OFF on Prepaid</p>
+        <p>Buy 2 Get ₹250 OFF | Buy 3 Get ₹500 OFF + Extra 5% OFF on Prepaid</p>
+        <p>Buy 2 Get ₹250 OFF | Buy 3 Get ₹500 OFF + Extra 5% OFF on Prepaid</p>
+        <p>Buy 2 Get ₹250 OFF | Buy 3 Get ₹500 OFF + Extra 5% OFF on Prepaid</p>
+        <p>Buy 2 Get ₹250 OFF | Buy 3 Get ₹500 OFF + Extra 5% OFF on Prepaid</p>
+    </div>
+</div>
+<style>
+    /* Top Bar Styling */
+    .top-header-nav {
+        background-color: #ffffff; /* Clean White Background */
+        border-bottom: 1px solid #eeeeee; /* Light divider line */
+        padding: 8px 0;
+    }
+
+    /* Links Styling */
+    .nav-link-item {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #1A1A1A; /* Urban Stitch Dark Charcoal */
+        padding-left: 20px;
+        transition: color 0.3s ease;
+    }
+
+    /* First item ki border hatane ke liye (optional but looks better) */
+    .nav-link-item:first-child {
+        border-left: none !important;
+    }
+
+    /* Hover Effect */
+    .nav-link-item:hover {
+        color: #3457D5; /* Urban Stitch Electric Blue */
+    }
+</style>
+
+<div class="container-fluid top-header-nav">
+    <div class="d-flex justify-content-end align-items-center me-md-5">
+        <a href="#" class="nav-link-item text-decoration-none border-end pe-3  border-secondary-subtle">Track Order</a>
+        <a href="#" class="nav-link-item text-decoration-none border-end pe-3 border-secondary-subtle">Store Locator</a>
+        <a href="#" class="nav-link-item text-decoration-none   border-secondary-subtle">Contact Us</a>
+    </div>
+</div>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+<style>
+    :root {
+        --urban-dark: #1A1A1A;
+        --urban-blue: #3457D5;
+    }
+
+    .navbar {
+        /* padding: 15px 0; */
+        background: #fff;
+        /* border-bottom: 1px solid #f0f0f0; */
+    }
+
+
+
+    /* Center Menu Links */
+    .navbar-nav .nav-link {
+        color: var(--urban-dark);
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 0 15px !important;
+        transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: var(--urban-dark);
+    }
+
+    /* Right Side Icons */
+    .nav-icon-group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav-icon-group a {
+        color: var(--urban-dark);
+        font-size: 1.2rem;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .nav-icon-group a:hover {
+        color: var(--urban-blue);
+    }
+
+    /* Cart Badge Style */
+    .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: -8px;
+        font-size: 10px;
+        background: #d63242;
+        color: white;
+        padding: 2px 5px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    /* Search Bar focus effect */
+    .search-input:focus {
+        box-shadow: none;
+        border-color: var(--urban-blue);
+    }
+.dropdown-menu {
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        border-radius: 12px;
+        padding: 12px;
+        min-width: 280px;
+    }
+
+    /* Flex container for Image + Text Stack */
+    .dropdown-item-custom {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+        text-decoration: none;
+        color: #1A1A1A;
+        margin-bottom: 4px;
+    }
+
+    .dropdown-item-custom:hover {
+        background-color: #f0f4ff; /* Light blue tint on hover */
+    }
+
+    /* Image Style */
+    .dropdown-thumb {
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0; /* Image ko dabne nahi dega */
+    }
+
+    /* Text Stack (Title + Subtitle) */
+    .text-stack {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category-label {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .category-subtext {
+        font-size: 12px;
+        color: #6c757d; /* Muted gray for subtitle */
+        margin-top: 2px;
+    }
+
+    /* Hover effect on subtext */
+    .dropdown-item-custom:hover .category-label {
+        color: #1A1A1A;
+    }
+    .explore-card{
+        border: 0px;
+        border-radius: 18px;    
+    }
+    .pipe{
+        width:50px;
+        border-radius:10px;
+        background-color: #d63242;
+        height:4px;
+        margin-bottom:10px;
+    }
+
+.explore-card {
+    position: relative;
+    overflow: hidden; /* Bahar nikalne se rokne ke liye */
+    border-radius: 12px;
+}
+
+.explore-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+    
+    /* 1. YEH SABSE IMPORTANT HAI: Zoom upar se start hoga */
+    transform-origin: top center; 
+}
+
+/* 2. Text/Label ko absolute rakhein taaki wo image ke upar rahe */
+.explore-card .card-label { 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Image ke upar rehne ke liye */
+    background: white; /* Label ka background hamesha white rakhein */
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* 3. Hover Effect */
+.explore-card:hover img {
+    /* Image zoom hogi par transform-origin ki wajah se niche ka hissa wahi rahega */
+    transform: scale(1.1); 
+}
+
+/* Card khud nahi hilna chahiye */
+.explore-card:hover {
+    transform: none !important;
+}
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); */
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  
+}
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-card:hover .hover-img {
+  opacity: 1;
+}
+
+.product-card:hover .main-img {
+  opacity: 0;
+}
+.arrival_badge {
+    font-size: 11px;
+    position: absolute;
+    top: 20px;
+    padding: 5px 41px 5px 9px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    left: 0;
+    width: auto;
+    letter-spacing: 0;
+    line-height: 1.5;
+    background: linear-gradient(61deg, rgb(0, 0, 0) 75%, transparent 70%);
+}
+.heart {
+    font-size:20px;
+    position: absolute;
+    top: 20px;
+    padding: 10px;
+    color: linear-gradient(61deg, rgb(0, 0, 0) 75%, transparent 70%);
+    font-weight: 500;
+    text-transform: uppercase;
+    right: 0;
+    width: auto;
+    letter-spacing: 0;
+    line-height: 1.5;
+   
+}
+</style>    
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-md-5">
+        
+        <a class="navbar-brand " href="#">
+            <img src="logo.png" class="img-fluid" alt="Urban Stitch" style="width: 150px;">
+            <!-- <span class="fw-bold d-lg-none">URBAN STITCH</span> -->
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+            <ul class="navbar-nav nav-underline">
+                 <li class="nav-item"><a class="nav-link" href="#">Trendings Now</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#"></a></li> -->
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           New Arrivals
+          </a>
+         <ul class="dropdown-menu">
+    <li>
+        <a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">For Men</span>
+                <span class="category-subtext">Tees, Jeans & Streetwear</span>
+            </div>
+        </a>
+    </li>
+    
+    <li>
+        <a class="dropdown-item-custom" href="#">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=120" class="dropdown-thumb" alt="Women">
+            <div class="text-stack">
+                <span class="category-label">For Women</span>
+                <span class="category-subtext">Dresses, Tops & Co-ords</span>
+            </div>
+        </a>
+    </li>
+
+    
+
+    <li>
+        <a class="dropdown-item-custom" href="#">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=120" class="dropdown-thumb" alt="Accessories">
+            <div class="text-stack">
+                <span class="category-label">Accessories</span>
+                <span class="category-subtext">Bags, Belts & Eyewear</span>
+            </div>
+        </a>
+    </li>
+</ul>
+        </li>
+               
+                 <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Men
+          </a>
+         
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">Shirts</span>
+               
+            </div>
+        </a></li>
+            <li><a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">Pant</span>
+               
+            </div>
+        </a></li>
+            
+            <li><a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">Tees</span>
+               
+            </div>
+        </a></li>
+          </ul>
+      
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Women
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">T-Shirts</span>
+               
+            </div>
+        </a></li>
+            <li><a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">Shirts</span>
+               
+            </div>
+        </a></li>
+            
+            <li><a class="dropdown-item-custom" href="#">
+            <img src="https://powerlook.in/cdn/shop/files/3_cddd6d96-d8e6-41a6-96ae-0cfbc4c80c33.jpg?v=1758623400&width=120" class="dropdown-thumb" alt="Men">
+            <div class="text-stack">
+                <span class="category-label">Trousers</span>
+               
+            </div>
+        </a></li>
+          </ul>
+        </li>
+                
+               
+                <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#">Shop By Video</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-icon-group d-none d-lg-flex">
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                <i class="bi bi-search"></i>
+            </a>
+            <a href="#"><i class="bi bi-person"></i></a>
+            <a href="#"><i class="bi bi-heart"></i></a>
+            <a href="#" class="position-relative">
+            <i class="bi bi-bag"></i>
+            <!-- <span class="cart-badge">2</span> -->
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+     Search ME
+    </div>
+  </div>
+</div>
+<div class="container-fluid p-0">
+    <video src="https://whatmore-brand-video-assets-720p.b-cdn.net/powerlook_75026858234/1080p_394e81cc-511a-44ce-8e6c-5b0ae8efaec4.mp4" loop autoplay muted playsinline style="width:100%;height:auto;"></video>
+</div>
+
+
+<div class="container-fluid px-5 py-5">
+   
+     <div class="row justify-content-center mb-4">
+          <h2 class="text-center">Explore Everything</h2>
+        <div class="pipe"> </div>
+    </div>
+<div class="row g-3 justify-content-center ">
+    <div class="col-lg-2 col-md-4 col-sm-6">
+
+    
+    <div class="card explore-card rounded-4 shadow p-0 ">
+        <img src="https://powerlook.in/cdn/shop/files/t-shirt_24.jpg" class="img-fluid imgrt rounded-top-4">
+        <div class="card-body p-1">
+            <div class="text-center fw-medium">T-Shirt</div>
+        </div>
+    </div></div>
+     <div class="col-lg-2 col-md-4 col-sm-6">
+
+    
+    <div class="card shadow explore-card p-0  rounded-4 ">
+        <img src="https://powerlook.in/cdn/shop/files/shirt_24.jpg" class="img-fluid imgrt  rounded-top-4">
+        <div class="card-body p-1">
+            <div class="text-center fw-medium">Shirt</div>
+        </div>
+    </div></div>
+     <div class="col-lg-2 col-md-4 col-sm-6">   
+
+    
+    <div class="card shadow  explore-card  rounded-4 p-0 ">
+        <img src="https://powerlook.in/cdn/shop/files/co-ords_1.jpg" class="img-fluid imgrt  rounded-top-4">
+        <div class="card-body p-1">
+            <div class="text-center fw-medium">Co-ords</div>
+        </div>
+    </div></div>
+   
+    
+     <div class="col-lg-2 col-md-4 col-sm-6">
+
+    
+    <div class="card shadow explore-card p-0   rounded-4">
+        <img src="https://powerlook.in/cdn/shop/files/bottoms_23.jpg" class="img-fluid  imgrt rounded-top-4">
+        <div class="card-body p-1">
+            <div class="text-center fw-medium">Bottoms</div>
+        </div>
+    </div></div>
+     <div class="col-lg-2 col-md-4 col-sm-6">
+
+    
+    <div class="card shadow explore-card p-0   rounded-4 ">
+        <img src="https://powerlook.in/cdn/shop/files/newarrival11.jpg" class="img-fluid  imgrt rounded-top-4">
+        <div class="card-body p-1">
+            <div class="text-center fw-medium">New Arrival</div>
+        </div>
+    </div></div>
+    <div class="col-lg-2 col-md-4 col-sm-6">
+
+    
+    <div class="card shadow explore-card p-0   rounded-4 ">
+        <img src="https://powerlook.in/cdn/shop/files/sale_category_2.jpg" class="img-fluid imgrt rounded-top-4">
+        <div class="card-body p-1">
+            <div class="text-center fw-medium">Super Deal</div>
+        </div>
+    </div></div>
+</div></div>
+
+
+<div class="container-fluid px-5 py-5">
+    <div class="row g-3 ">
+        <div class="d-flex justify-content-between">
+<div>
+        <h2 class=" pb-4  ">New Arrival</h2></div>
+       <div> <ul class="nav nav-underline">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">T-shirt</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-decoration-none text-black" href="#">Shirt</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-decoration-none text-black" href="#">Cargo</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-decoration-none text-black" href="#">Denim</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link text-decoration-none text-black" href="#">All Product</a>
+  </li>
+  
+
+ 
+</ul></div>
+</div></div>
+<div class="row g-3">
+<div class="col-lg-3">
+<div class="card bg-transparent product-card border-0 rounded-0">
+     <div class="img-wrapper">
+      <img src="https://powerlook.in/cdn/shop/files/dp2_28.jpg"
+           class="img-fluid main-img" alt="Angel Touch">
+      <img src="https://powerlook.in/cdn/shop/files/dp1_44.jpg"
+           class="img-fluid hover-img" alt="Angel Touch Hover">
+           <div class="arrival_badge">New Arrival</div>
+           <div class="heart"><i class="bi bi-heart"></i></div>
+           
+    </div>
+
+    <div class="card-body bg-transparent ps-0">
+        <div class="fw-semibold fs-5">Earthy Stripe Zipper Polo T-Shirt</div>
+        <div class="price fw-semibold fs-6">1,199.00</div>
+        <div class="star fw-normal"><i class="bi bi-star-fill text-muted"></i> 5.0 | 4.0</div>
+    </div>
+</div>
+</div><div class="col-lg-3">
+<div class="card bg-transparent product-card border-0 rounded-0">
+     <div class="img-wrapper">
+      <img src="https://powerlook.in/cdn/shop/files/dp2_28.jpg"
+           class="img-fluid main-img" alt="Angel Touch">
+      <img src="https://powerlook.in/cdn/shop/files/dp1_44.jpg"
+           class="img-fluid hover-img" alt="Angel Touch Hover">
+           <div class="arrival_badge">New Arrival</div>
+           <div class="heart"><i class="bi bi-heart"></i></div>
+           
+    </div>
+
+    <div class="card-body bg-transparent ps-0">
+        <div class="fw-semibold fs-5">Earthy Stripe Zipper Polo T-Shirt</div>
+        <div class="price fw-semibold fs-6">1,199.00</div>
+        <div class="star fw-normal"> <i class="bi bi-star-fill text-muted"></i>  5.0 | 4.0</div>
+    </div>
+</div>
+</div><div class="col-lg-3">
+<div class="card bg-transparent product-card border-0 rounded-0">
+     <div class="img-wrapper">
+      <img src="https://powerlook.in/cdn/shop/files/dp2_28.jpg"
+           class="img-fluid main-img" alt="Angel Touch">
+      <img src="https://powerlook.in/cdn/shop/files/dp1_44.jpg"
+           class="img-fluid hover-img" alt="Angel Touch Hover">
+           <div class="arrival_badge">New Arrival</div>
+           <div class="heart"><i class="bi bi-heart"></i></div>
+           
+    </div>
+
+    <div class="card-body bg-transparent ps-0">
+        <div class="fw-semibold fs-5">Earthy Stripe Zipper Polo T-Shirt</div>
+        <div class="price fw-semibold fs-6">1,199.00</div>
+        <div class="star fw-normal"><i class="bi bi-star-fill text-muted"></i> 5.0 | 4.0</div>
+    </div>
+</div>
+</div><div class="col-lg-3">
+<div class="card bg-transparent product-card border-0 rounded-0">
+     <div class="img-wrapper">
+      <img src="https://powerlook.in/cdn/shop/files/dp2_28.jpg"
+           class="img-fluid main-img" alt="Angel Touch">
+      <img src="https://powerlook.in/cdn/shop/files/dp1_44.jpg"
+           class="img-fluid hover-img" alt="Angel Touch Hover">
+           <div class="arrival_badge">New Arrival</div>
+           <div class="heart"><i class="bi bi-heart"></i></div>
+           
+    </div>
+
+    <div class="card-body bg-transparent ps-0">
+        <div class="fw-semibold fs-5">Earthy Stripe Zipper Polo T-Shirt</div>
+        <div class="price fw-semibold fs-6">1,199.00</div>
+        <div class="star fw-normal"> <i class="bi bi-star-fill text-muted"></i> 5.0 | 4.0</div>
+    </div>
+</div>
+</div>
+</div>
+<div class="mx-auto mt-2 d-flex justify-content-center">
+    <button class="btn btn-danger  rounded-0">View All Product</button>
+</div>
+</div>
+<div class="container-fluid px-5 py-5">
+   
+     <div class="row justify-content-center mb-4">
+          <h2 class="text-center">New Deals, New Trends</h2>
+        <div class="pipe"> </div>
+    </div>
+    <div class="row g-5">
+        <div class="col-md-4">
+            <div class="card border-0 rounded-0">
+                <img src="https://powerlook.in/cdn/shop/files/3_33.jpg" class="img-fluid">
+           <div class="card-body ps-0">
+                <div class="card-text fs-6 fw-medium">
+                    Shop now
+                </div>
+            </div>  
+            </div>
+                  </div>
+         <div class="col-md-4">
+            <div class="card border-0 rounded-0">
+                <img src="https://powerlook.in/cdn/shop/files/3_33.jpg" class="img-fluid">
+                <div class="card-body ps-0">
+                <div class="card-text fs-6 fw-medium">
+                    Shop now
+                </div>
+            </div>  
+            </div>
+        </div>
+          <div class="col-md-4">
+            <div class="card border-0 rounded-0">
+                <img src="https://powerlook.in/cdn/shop/files/3_33.jpg" class="img-fluid">
+               <div class="card-body ps-0">
+                <div class="card-text fs-6 fw-medium">
+                    Shop now
+                </div>
+            </div>  
+            </div>
+        </div>
+        
+
+
+    </div>
+
+
+
+        
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
+</body>
+
+</html>
